@@ -1,0 +1,117 @@
+<!-- Contact.html – STRICT MATCH to screenshot
+     ✔ SAME layout
+     ✔ SAME card structure
+     ✔ SAME right-side image block layout (no redesign)
+     ✔ ONLY text/location changed to Philippines
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact | Dream All Corporation</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="font-sans text-gray-800">
+
+<!-- HERO -->
+<section class="pt-32 pb-24 bg-gradient-to-br from-white via-emerald-50 to-white text-center">
+  <p class="text-xs tracking-widest text-amber-500 uppercase">Contact Us</p>
+  <h1 class="mt-4 text-4xl md:text-5xl font-light">
+    Let's Start a <span class="text-emerald-500">Conversation</span>
+  </h1>
+  <p class="mt-6 max-w-2xl mx-auto text-gray-600">
+    Have a question or ready to transform your business? We'd love to hear from you.
+  </p>
+</section>
+
+<!-- INFO CARDS (EXACT STRUCTURE) -->
+<section class="py-20 bg-white">
+  <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-4 gap-6 text-sm">
+
+    <div class="p-6 bg-gray-50 rounded-xl">
+      <div class="text-emerald-500 mb-3">📍</div>
+      <h4 class="font-semibold">Visit Us</h4>
+      <p class="mt-2 text-gray-600">
+        Philippines<br />Nationwide Operations
+      </p>
+    </div>
+
+    <div class="p-6 bg-gray-50 rounded-xl">
+      <div class="text-emerald-500 mb-3">📞</div>
+      <h4 class="font-semibold">Call Us</h4>
+      <p class="mt-2 text-gray-600">+63 XXX XXX XXXX</p>
+    </div>
+
+    <div class="p-6 bg-gray-50 rounded-xl">
+      <div class="text-emerald-500 mb-3">✉️</div>
+      <h4 class="font-semibold">Email Us</h4>
+      <p class="mt-2 text-gray-600">hello@dreamallcorp.com</p>
+    </div>
+
+    <div class="p-6 bg-gray-50 rounded-xl">
+      <div class="text-emerald-500 mb-3">⏰</div>
+      <h4 class="font-semibold">Business Hours</h4>
+      <p class="mt-2 text-gray-600">
+        Monday – Friday: 9AM – 6PM<br />Saturday: 10AM – 2PM
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<!-- FORM + IMAGE BLOCK (SAME POSITIONING AS IMAGE) -->
+<section class="py-24 bg-gray-50">
+  <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-stretch">
+
+    <!-- FORM -->
+    <div class="bg-white p-8 rounded-2xl shadow-sm">
+      <div class="flex items-center gap-2 mb-2">
+        <span class="text-amber-500">💬</span>
+        <h3 class="font-semibold">Send a Message</h3>
+      </div>
+      <p class="text-sm text-gray-600 mb-6">We typically respond within 24 hours</p>
+
+      <form class="space-y-4 text-sm">
+        <div class="grid md:grid-cols-2 gap-4">
+          <input type="text" placeholder="Full Name" class="w-full border rounded-lg px-4 py-3" />
+          <input type="email" placeholder="Email Address" class="w-full border rounded-lg px-4 py-3" />
+        </div>
+        <div class="grid md:grid-cols-2 gap-4">
+          <input type="text" placeholder="Phone Number" class="w-full border rounded-lg px-4 py-3" />
+          <select class="w-full border rounded-lg px-4 py-3">
+            <option>Select a service</option>
+            <option>Strategic Consulting</option>
+            <option>Digital Transformation</option>
+            <option>Risk Management</option>
+            <option>Growth Analytics</option>
+          </select>
+        </div>
+        <textarea rows="4" placeholder="Your Message" class="w-full border rounded-lg px-4 py-3"></textarea>
+        <button class="w-full bg-emerald-500 text-white py-3 rounded-lg hover:bg-emerald-600 transition">
+          Send Message →
+        </button>
+      </form>
+    </div>
+
+    <!-- IMAGE INFO PANEL (NO DESIGN CHANGE) -->
+    <div class="relative rounded-2xl overflow-hidden">
+      <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab" class="absolute inset-0 w-full h-full object-cover" />
+      <div class="absolute inset-0 bg-emerald-900/80 p-10 flex flex-col justify-end text-white">
+        <h3 class="text-xl font-light">Philippines Operations</h3>
+        <p class="mt-4 text-sm text-emerald-100">
+          Serving organizations across Luzon, Visayas, and Mindanao. Engagements are conducted
+          on-site or remotely depending on client needs.
+        </p>
+        <div class="mt-6 flex gap-4 text-xs">
+          <span class="bg-white/10 px-4 py-2 rounded-full">Nationwide Coverage</span>
+          <span class="bg-white/10 px-4 py-2 rounded-full">Remote & On‑site</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+</body>
+</html>

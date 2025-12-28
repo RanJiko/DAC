@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dream All Corporation</title>
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Tailwind Config -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#003F3F',
+            secondary: '#0f766e',
+            accent: '#f59e0b'
+          },
+          animation: {
+            'fade-up': 'fadeUp 1s ease-out forwards',
+            'fade-in': 'fadeIn 1.2s ease-out forwards',
+            'float': 'float 5s ease-in-out infinite'
+          },
+          keyframes: {
+            fadeUp: {
+              '0%': { opacity: 0, transform: 'translateY(40px)' },
+              '100%': { opacity: 1, transform: 'translateY(0)' }
+            },
+            fadeIn: {
+              '0%': { opacity: 0 },
+              '100%': { opacity: 1 }
+            },
+            float: {
+              '0%,100%': { transform: 'translateY(0)' },
+              '50%': { transform: 'translateY(-12px)' }
+            }
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-white text-slate-800 scroll-smooth transition-opacity duration-500 opacity-100">
+
+<div id="navbar"></div>
+
+<div id="navbar"></div>
+
+<script>
+  fetch('navbar.html')
+    .then(res => res.text())
+    .then(html => {
+      document.getElementById('navbar').innerHTML = html;
+
+      // Run your navbar JS after inserting HTML
+      const menuBtn = document.getElementById('menuBtn');
+      const closeBtn = document.getElementById('closeMenu');
+      const mobileMenu = document.getElementById('mobileMenu');
+
+      function openMenu() {
+        mobileMenu.classList.remove('-translate-y-full', 'opacity-0');
+        mobileMenu.classList.add('translate-y-0', 'opacity-100');
+        document.body.classList.add('overflow-hidden');
+      }
+
+      function closeMenu() {
+        mobileMenu.classList.remove('translate-y-0', 'opacity-100');
+        mobileMenu.classList.add('-translate-y-full', 'opacity-0');
+        document.body.classList.remove('overflow-hidden');
+      }
+
+      menuBtn.addEventListener('click', openMenu);
+      closeBtn.addEventListener('click', closeMenu);
+
+      mobileMenu.addEventListener('click', (e) => {
+        if (e.target === mobileMenu) closeMenu();
+      });
+    });
+</script>
+
+
+
+
+<!-- HERO -->
+<section class="pt-32 pb-24 relative overflow-hidden">
+  <div class="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-accent/10"></div>
+  <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-14 px-6 relative">
+
+    <div class="opacity-0 reveal">
+      <span class="inline-block mb-4 px-4 py-1 text-xs bg-primary/10 text-primary rounded-full">✨ Where Dreams Meet Reality</span>
+      <h1 class="text-5xl font-bold leading-tight mb-6">Dream All <span class="text-primary">Corporation</span></h1>
+      <p class="text-slate-600 mb-8">Transforming visionary ideas into extraordinary realities through innovation, strategy, and technology.</p>
+      <div class="flex gap-4">
+        <button class="bg-primary text-white px-6 py-3 rounded-full hover:scale-105 transition">Explore Services</button>
+        <button class="border border-slate-300 px-6 py-3 rounded-full hover:bg-slate-100 transition">Learn More</button>
+      </div>
+
+      <!-- COUNTERS -->
+      <div class="grid grid-cols-3 gap-6 mt-12">
+        <div class="text-center">
+          <p class="text-3xl font-bold text-primary counter" data-target="15">0</p>
+          <span class="text-sm text-slate-500">Years Experience</span>
+        </div>
+        <div class="text-center">
+          <p class="text-3xl font-bold text-primary counter" data-target="500">0</p>
+          <span class="text-sm text-slate-500">Projects Delivered</span>
+        </div>
+        <div class="text-center">
+          <p class="text-3xl font-bold text-primary counter" data-target="98">0</p>
+          <span class="text-sm text-slate-500">Client Satisfaction %</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="relative animate-float">
+      <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d" class="rounded-3xl shadow-2xl" />
+      <div class="absolute bottom-6 left-6 bg-white px-5 py-3 rounded-xl shadow-lg flex items-center gap-3">
+        <span class="bg-accent text-white p-2 rounded-lg">★</span>
+        <div>
+          <p class="font-semibold">Award Winning</p>
+          <p class="text-xs text-slate-500">Excellence in Innovation</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services" class="scroll-mt-24 py-24 bg-slate-50">
+  <div class="max-w-7xl mx-auto px-6 text-center">
+    <span class="text-xs text-accent font-semibold">WHAT WE OFFER</span>
+    <h2 class="text-4xl font-bold mt-4 mb-6 reveal">Exceptional Services for Exceptional Results</h2>
+    <p class="max-w-2xl mx-auto text-slate-600 mb-14">We deliver comprehensive solutions designed to transform challenges into opportunities.</p>
+
+    <div class="grid md:grid-cols-4 gap-8">
+      <div class="bg-white p-8 rounded-2xl shadow hover:-translate-y-2 transition reveal">
+        <div class="text-primary text-3xl mb-4">💡</div>
+        <h3 class="font-semibold mb-2">Strategic Consulting</h3>
+        <p class="text-sm text-slate-600">Data-driven strategies tailored to your goals.</p>
+      </div>
+      <div class="bg-white p-8 rounded-2xl shadow hover:-translate-y-2 transition reveal">
+        <div class="text-accent text-3xl mb-4">🚀</div>
+        <h3 class="font-semibold mb-2">Digital Innovation</h3>
+        <p class="text-sm text-slate-600">Cutting-edge technology to accelerate growth.</p>
+      </div>
+      <div class="bg-white p-8 rounded-2xl shadow hover:-translate-y-2 transition reveal">
+        <div class="text-primary text-3xl mb-4">🛡️</div>
+        <h3 class="font-semibold mb-2">Risk Management</h3>
+        <p class="text-sm text-slate-600">Comprehensive assessment and mitigation.</p>
+      </div>
+      <div class="bg-white p-8 rounded-2xl shadow hover:-translate-y-2 transition reveal">
+        <div class="text-accent text-3xl mb-4">📊</div>
+        <h3 class="font-semibold mb-2">Growth Analytics</h3>
+        <p class="text-sm text-slate-600">Insights that drive smarter decisions.</p>
+      </div>
+    </div>
+
+    <a href="#" class="inline-flex items-center gap-2 mt-12 text-primary font-medium hover:gap-3 transition">View All Services →</a>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="py-24 bg-gradient-to-br from-secondary to-slate-900 text-white">
+  <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-14 items-center">
+
+    <div class="relative reveal">
+      <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c" class="rounded-3xl shadow-2xl" />
+      <div class="absolute top-6 right-6 bg-accent text-white px-4 py-2 rounded-xl text-sm font-semibold">DAC • Since 2009</div>
+    </div>
+
+    <div class="reveal">
+      <span class="text-xs uppercase tracking-widest text-accent">About Us</span>
+      <h2 class="text-4xl font-bold mt-4 mb-6">Building Dreams,<br><span class="text-accent">Delivering Excellence</span></h2>
+      <p class="text-slate-200 mb-6">Dream All Corporation is a visionary company dedicated to transforming ambitious ideas into tangible success stories. With over 15 years of experience, we’ve empowered hundreds of businesses.</p>
+      <ul class="space-y-3 text-sm">
+        <li>✔ Industry-leading expertise & innovation</li>
+        <li>✔ Dedicated team of professionals</li>
+        <li>✔ Client-centric approach</li>
+        <li>✔ Ethical & sustainable practices</li>
+      </ul>
+      <button class="mt-8 bg-white text-slate-900 px-6 py-3 rounded-full hover:scale-105 transition">Discover Our Story</button>
+    </div>
+
+  </div>
+</section>
+
+<!-- CTA -->
+<section id="contact" class="scroll-mt-24 py-24">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="bg-gradient-to-br from-slate-900 to-slate-800 rounded-3xl p-16 text-center text-white reveal">
+      <span class="text-xs bg-white/10 px-4 py-1 rounded-full">📩 Let’s Connect</span>
+      <h2 class="text-4xl font-bold mt-6 mb-4">Ready to Turn Your <span class="text-primary">Dreams</span> Into Reality?</h2>
+      <p class="text-slate-300 mb-8">Partner with us and experience the power of expertise and innovation.</p>
+      <div class="flex justify-center gap-4">
+        <button class="bg-primary px-8 py-4 rounded-full hover:scale-105 transition">Start a Conversation</button>
+        <button class="bg-white text-slate-900 px-8 py-4 rounded-full hover:scale-105 transition">Contact Sales</button>
+      </div>
+    </div>
+  </div>
+</section>
+<button id="faqBtn"
+  class="fixed bottom-6 right-6 bg-primary text-white w-14 h-14 rounded-full shadow-xl
+         flex items-center justify-center text-xl
+         hover:scale-110 active:scale-95 transition z-50">
+  💬
+</button>
+
+<div id="faqBot"
+  class="fixed bottom-24 right-6 w-80 bg-white rounded-2xl shadow-2xl
+         opacity-0 translate-y-4 scale-95 pointer-events-none
+         transition-all duration-300 z-50">
+
+  <!-- Header -->
+  <div class="bg-primary text-white px-4 py-3 rounded-t-2xl flex justify-between items-center">
+    <span class="font-semibold text-sm">DAC FAQ Assistant</span>
+    <button id="closeFaq" class="text-white/80 hover:text-white text-lg">&times;</button>
+  </div>
+
+  <!-- Messages -->
+  <div id="faqContent"
+       class="p-4 space-y-3 text-sm h-64 overflow-y-auto bg-slate-50">
+    <div class="bg-white p-3 rounded-xl shadow-sm">
+      👋 Hi! How can I help you today?
+    </div>
+  </div>
+
+  <!-- Questions -->
+  <div id="faqButtons"
+       class="p-3 border-t flex flex-wrap gap-2 bg-white rounded-b-2xl">
+  </div>
+</div>
+
+
+<script>
+  const faqBtn = document.getElementById('faqBtn');
+  const faqBot = document.getElementById('faqBot');
+  const closeFaq = document.getElementById('closeFaq');
+  const faqContent = document.getElementById('faqContent');
+  const faqButtons = document.getElementById('faqButtons');
+
+  const answers = {
+    "What services do you offer?": `
+      We offer:
+      <ul class="list-disc pl-5 mt-2 space-y-1">
+        <li><a href="services.html" class="page-link text-primary font-medium hover:underline">Strategic Consulting</a></li>
+        <li><a href="services.html" class="page-link text-primary font-medium hover:underline">Digital Innovation</a></li>
+        <li><a href="services.html" class="page-link text-primary font-medium hover:underline">Risk Management</a></li>
+        <li><a href="services.html" class="page-link text-primary font-medium hover:underline">Growth Analytics</a></li>
+      </ul>
+    `,
+    "How can I contact you?": `
+      You can reach us via:
+      <ul class="list-disc pl-5 mt-2">
+        <li>Email: <a href="mailto:hello@dreamallcorp.com" class="text-primary hover:underline">hello@dreamallcorp.com</a></li>
+        <li>Phone: +1 (555) 123-4567</li>
+      </ul>
+    `,
+    "Do you offer free consultations?": `
+      Yes! We offer a free initial consultation.
+      <br>
+      <a href="contact.html" class="page-link text-primary font-medium hover:underline">
+        Book now →
+      </a>
+    `
+  };
+
+  /* Toggle Bot */
+  function toggleBot(show = true) {
+    faqBot.classList.toggle('opacity-0', !show);
+    faqBot.classList.toggle('translate-y-4', !show);
+    faqBot.classList.toggle('scale-95', !show);
+    faqBot.classList.toggle('pointer-events-none', !show);
+  }
+
+  faqBtn.onclick = () => toggleBot(true);
+  closeFaq.onclick = () => toggleBot(false);
+
+  /* Generate Question Buttons */
+  Object.keys(answers).forEach(q => {
+    const btn = document.createElement('button');
+    btn.textContent = q;
+    btn.className =
+      "bg-slate-100 px-3 py-2 rounded-lg text-xs hover:bg-slate-200 transition";
+    btn.onclick = () => askQuestion(q);
+    faqButtons.appendChild(btn);
+  });
+
+  /* Ask Question */
+  function askQuestion(q) {
+    faqContent.innerHTML += `
+      <div class="text-right bg-primary text-white p-3 rounded-xl ml-10 shadow-sm">${q}</div>
+      <div class="bg-white p-3 rounded-xl mr-10 shadow-sm animate-pulse">Typing…</div>
+    `;
+
+    faqContent.scrollTop = faqContent.scrollHeight;
+
+    setTimeout(() => {
+      faqContent.lastElementChild.outerHTML = `
+        <div class="bg-white p-3 rounded-xl mr-10 shadow-sm">${answers[q]}</div>
+      `;
+      faqContent.scrollTop = faqContent.scrollHeight;
+    }, 600);
+  }
+</script>
+
+
+<!-- FOOTER -->
+<footer class="bg-slate-900 text-slate-400 py-16">
+  <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-4 gap-10">
+    <div>
+      <h3 class="text-white font-bold mb-3">DAC</h3>
+      <p class="text-sm">Transforming visionary ideas into extraordinary realities since 2009.</p>
+    </div>
+    <div>
+      <h4 class="text-white font-semibold mb-3">Quick Links</h4>
+      <ul class="space-y-2 text-sm"><li>Home</li><li>About</li><li>Services</li><li>Contact</li></ul>
+    </div>
+    <div>
+      <h4 class="text-white font-semibold mb-3">Services</h4>
+      <ul class="space-y-2 text-sm"><li>Consulting</li><li>Innovation</li><li>Risk</li><li>Analytics</li></ul>
+    </div>
+    <div>
+      <h4 class="text-white font-semibold mb-3">Contact</h4>
+      <p class="text-sm">hello@dreamallcorp.com</p>
+      <p class="text-sm">+1 (555) 123-4567</p>
+    </div>
+  </div>
+</footer>
+
+<!-- SCRIPTS -->
+<script>
+  // Navbar shadow on scroll
+  const nav = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('shadow-md', window.scrollY > 20);
+  });
+
+  // Reveal on scroll
+  const reveals = document.querySelectorAll('.reveal');
+  const revealObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('animate-fade-up');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+  reveals.forEach(r => revealObserver.observe(r));
+
+  // Counters
+  const counters = document.querySelectorAll('.counter');
+  const runCounter = (counter) => {
+    const target = +counter.dataset.target;
+    let count = 0;
+    const inc = target / 120;
+    const update = () => {
+      count += inc;
+      if (count < target) {
+        counter.innerText = Math.ceil(count);
+        requestAnimationFrame(update);
+      } else counter.innerText = target;
+    };
+    update();
+  };
+  const counterObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        runCounter(entry.target);
+        counterObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.6 });
+  counters.forEach(c => counterObserver.observe(c));
+</script>
+
+</body>
+</html>
