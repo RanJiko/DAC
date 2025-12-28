@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dream All Corporation</title>
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Tailwind Config -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#003F3F',
+            secondary: '#0f766e',
+            accent: '#f59e0b'
+          },
+          animation: {
+            'fade-up': 'fadeUp 1s ease-out forwards',
+            'fade-in': 'fadeIn 1.2s ease-out forwards',
+            'float': 'float 5s ease-in-out infinite'
+          },
+          keyframes: {
+            fadeUp: {
+              '0%': { opacity: 0, transform: 'translateY(40px)' },
+              '100%': { opacity: 1, transform: 'translateY(0)' }
+            },
+            fadeIn: {
+              '0%': { opacity: 0 },
+              '100%': { opacity: 1 }
+            },
+            float: {
+              '0%,100%': { transform: 'translateY(0)' },
+              '50%': { transform: 'translateY(-12px)' }
+            }
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-gray-50">
+
+  <!-- NAVBAR -->
+  <header class="fixed top-0 left-0 w-full bg-white/80 backdrop-blur z-50 shadow-md">
+    <div class="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
+      
+      <!-- Logo -->
+      <div class="flex items-center gap-2 font-bold text-primary text-lg">
+        DAC <span class="text-xs text-slate-500">Dream All Corp</span>
+      </div>
+
+      <!-- Desktop Menu -->
+      <nav class="hidden md:flex gap-8 text-sm font-medium">
+        <a href="home.html" class="hover:text-primary transition">Home</a>
+        <a href="about.html" class="hover:text-primary transition">About</a>
+        <a href="#services" class="hover:text-primary transition">Services</a>
+        <a href="#contact" class="hover:text-primary transition">Contact</a>
+      </nav>
+
+      <!-- CTA Button (Desktop) -->
+      <button class="hidden md:block bg-primary text-white px-5 py-2 rounded-full hover:bg-secondary transition">
+        Get in Touch
+      </button>
+
+      <!-- Hamburger Button (Mobile) -->
+      <button id="menuBtn" class="md:hidden text-2xl text-primary focus:outline-none z-50">
+        &#9776;
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Menu -->
+  <div id="mobileMenu" class="fixed inset-0 bg-white z-40 flex flex-col p-6 pt-24 gap-6 overflow-y-auto transform -translate-y-full opacity-0 transition-transform duration-300 ease-out">
+    <a href="home.html" class="text-lg font-medium hover:text-primary transition">Home</a>
+    <a href="about.html" class="text-lg font-medium hover:text-primary transition">About</a>
+    <a href="#services" class="text-lg font-medium hover:text-primary transition">Services</a>
+    <a href="#contact" class="text-lg font-medium hover:text-primary transition">Contact</a>
+    <button class="bg-primary text-white px-5 py-2 rounded-full hover:bg-secondary transition mt-2">
+      Get in Touch
+    </button>
+
+    <!-- Close Button -->
+    <button id="closeMenu" class="absolute top-6 right-6 text-3xl text-primary">&times;</button>
+  </div>
+
+  <!-- JS for Mobile Toggle + Animation + Scroll Lock -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const menuBtn = document.getElementById('menuBtn');
+      const closeBtn = document.getElementById('closeMenu');
+      const mobileMenu = document.getElementById('mobileMenu');
+
+      function openMenu() {
+        mobileMenu.classList.remove('-translate-y-full', 'opacity-0');
+        mobileMenu.classList.add('translate-y-0', 'opacity-100');
+        document.body.classList.add('overflow-hidden'); // lock scroll
+      }
+
+      function closeMenu() {
+        mobileMenu.classList.remove('translate-y-0', 'opacity-100');
+        mobileMenu.classList.add('-translate-y-full', 'opacity-0');
+        document.body.classList.remove('overflow-hidden'); // unlock scroll
+      }
+
+      menuBtn.addEventListener('click', openMenu);
+      closeBtn.addEventListener('click', closeMenu);
+
+      // Close if clicking outside menu content
+      mobileMenu.addEventListener('click', (e) => {
+        if (e.target === mobileMenu) closeMenu();
+      });
+    });
+  </script>
+
+</body>
+</html>
